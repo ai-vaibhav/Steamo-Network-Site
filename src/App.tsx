@@ -13,6 +13,7 @@ import NotFound from "./pages/NotFound";
 import BlogArticlePage from "./pages/BlogArticlePage";
 import BlogListingPage from "./pages/BlogListingPage";
 import BlogCreatePage from "./pages/BlogCreatePage";
+import { CursorEffect } from "@/components/CursorEffect";
 
 const queryClient = new QueryClient();
 
@@ -49,6 +50,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <CursorEffect />
       <BrowserRouter>
         <AnimatedRoutes />
       </BrowserRouter>
