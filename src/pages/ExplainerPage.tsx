@@ -78,10 +78,10 @@ export default function ExplainerPage() {
       <ScrollNavigator />
 
       <motion.div className="mb-10" variants={fadeInUp} initial="hidden" animate="visible">
-        <h1 className="steami-heading text-4xl md:text-5xl mb-4">
+        <h1 className="steami-heading text-3xl sm:text-4xl md:text-5xl mb-4">
           Intelligence Explainers
         </h1>
-        <p className="text-[18px] font-medium text-muted-foreground max-w-xl leading-relaxed">
+        <p className="text-sm sm:text-[15px] md:text-[17px] font-medium text-muted-foreground max-w-xl leading-relaxed">
           Interactive deep-dives into breakthrough science & technology. Select text to save to your Research Diary.
         </p>
       </motion.div>
@@ -132,14 +132,14 @@ export default function ExplainerPage() {
                           width={768}
                           height={512}
                         />
-                         <div
+                        <div
                           className="absolute inset-0"
                           style={{
                             background: isLight
                               ? 'linear-gradient(180deg, transparent 55%, rgba(15,40,80,0.15) 100%)'
                               : 'linear-gradient(180deg, transparent 40%, rgba(2,8,23,0.95) 100%)',
                           }}
-                         />
+                        />
                         <ShareMenu title={exp.title} compact className="absolute top-4 right-5 opacity-0 group-hover:opacity-100 transition-opacity" />
                       </div>
                       <div className="px-8 pb-8 pt-4">
@@ -149,8 +149,8 @@ export default function ExplainerPage() {
                         </div>
                         <div className="flex items-start gap-5">
                           <div className="flex-1">
-                            <h3 className="font-serif text-2xl md:text-3xl font-extrabold mb-3 leading-snug text-foreground">{exp.title}</h3>
-                            <p className="text-[18px] font-medium text-muted-foreground leading-relaxed mb-6 max-w-2xl">{exp.subtitle}</p>
+                            <h3 className="font-serif text-xl sm:text-2xl md:text-3xl font-extrabold mb-3 leading-snug text-foreground">{exp.title}</h3>
+                            <p className="text-sm sm:text-[15px] md:text-[17px] font-medium text-muted-foreground leading-relaxed mb-6 max-w-2xl">{exp.subtitle}</p>
                           </div>
                           <CardSvgVisual field={exp.field} variant="featured" className="hidden sm:flex mt-1" />
                         </div>
@@ -248,7 +248,7 @@ export default function ExplainerPage() {
                 <div className="flex items-start gap-3">
                   <div className="flex-1">
                     <h3 className="font-serif text-[18px] font-extrabold mb-2 leading-snug text-foreground">{exp.title}</h3>
-                    <p className="text-[18px] font-medium text-muted-foreground leading-relaxed line-clamp-3 mb-4">{exp.subtitle}</p>
+                    <p className="text-sm sm:text-[15px] md:text-[17px] font-medium text-muted-foreground leading-relaxed line-clamp-3 mb-4">{exp.subtitle}</p>
                   </div>
                   <CardSvgVisual field={exp.field} variant="mini" className="hidden sm:flex mt-0.5 shrink-0" />
                 </div>
@@ -427,8 +427,8 @@ export default function ExplainerPage() {
                           background: i === slideIdx
                             ? 'hsl(207 72% 65%)'
                             : i < slideIdx
-                            ? 'rgba(99,179,237,0.3)'
-                            : isLight ? 'rgba(0,0,0,0.06)' : 'rgba(255,255,255,0.08)',
+                              ? 'rgba(99,179,237,0.3)'
+                              : isLight ? 'rgba(0,0,0,0.06)' : 'rgba(255,255,255,0.08)',
                           scaleY: i === slideIdx ? 1.5 : 1,
                         }}
                         transition={{ duration: 0.3 }}

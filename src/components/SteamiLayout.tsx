@@ -8,7 +8,7 @@ import { pageVariants } from '@/lib/motion';
 
 export function SteamiLayout({ children }: { children: ReactNode }) {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden">
       <ScrollProgress />
       <StarBackground />
       <SteamiNav />
@@ -17,7 +17,7 @@ export function SteamiLayout({ children }: { children: ReactNode }) {
         initial="initial"
         animate="animate"
         exit="exit"
-        className="pt-16 px-5 pb-20 max-w-[1200px] mx-auto min-h-[calc(100vh-400px)]"
+        className="pt-16 px-4 sm:px-5 md:px-6 pb-20 max-w-[1200px] mx-auto min-h-[calc(100vh-400px)]"
       >
         {children}
       </motion.main>

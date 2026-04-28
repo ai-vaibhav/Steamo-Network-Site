@@ -45,10 +45,10 @@ export default function DashboardPage() {
     <SteamiLayout>
       {/* Page Header */}
       <motion.div className="mb-8" variants={fadeInUp} initial="hidden" animate="visible">
-        <h1 className="steami-heading text-3xl md:text-4xl mb-3">
+        <h1 className="steami-heading text-2xl sm:text-3xl md:text-4xl mb-3">
           {isAuthenticated && user ? `Welcome, ${user.fullName.split(' ')[0]}` : ' Intelligence Dashboard'}
         </h1>
-        <p className="text-[18px] font-medium text-muted-foreground max-w-xl leading-relaxed">
+        <p className="text-sm sm:text-[15px] md:text-[17px] font-medium text-muted-foreground max-w-xl leading-relaxed">
           Your personalized research hub. Notes, recommendations, and learning insights — all in one place.
         </p>
       </motion.div>
@@ -81,9 +81,9 @@ export default function DashboardPage() {
                 whileHover={cardHover}
               >
                 <Link to={`/?open=${exp.id}`} className="glass-card relative p-5 overflow-hidden block h-full">
-                  <span className={`steami-badge text-[16px] steami-badge-${exp.badgeColor} mb-2 inline-block`}>{exp.field}</span>
-                  <h4 className="font-serif text-[18px] font-extrabold text-foreground leading-snug mb-1">{exp.title}</h4>
-                  <p className="text-[14px] font-medium text-muted-foreground leading-relaxed line-clamp-2">{exp.subtitle}</p>
+                  <span className={`steami-badge text-[10px] steami-badge-${exp.badgeColor} mb-2 inline-block`}>{exp.field}</span>
+                  <h4 className="font-serif text-[15px] sm:text-[17px] font-extrabold text-foreground leading-snug mb-1">{exp.title}</h4>
+                  <p className="text-[12px] sm:text-[13px] md:text-[14px] font-medium text-muted-foreground leading-relaxed line-clamp-2">{exp.subtitle}</p>
                 </Link>
               </motion.div>
             ))}
@@ -226,7 +226,7 @@ export default function DashboardPage() {
           <div className="flex gap-1 mb-3">
             {(['all', 'article', 'news', 'explainer'] as const).map((f) => (
               <motion.button key={f} whileHover={{ scale: 1.06 }} whileTap={{ scale: 0.94 }} onClick={() => setFeedFilter(f)}
-                className={`font-mono text-[16px] tracking-wider uppercase px-3 py-1.5 rounded-md transition-all ${feedFilter === f ? 'text-steami-gold bg-steami-gold/10 border-steami-gold/30' : 'text-muted-foreground hover:text-foreground bg-transparent'}`}
+                className={`font-mono text-[10px] sm:text-[11px] tracking-wider uppercase px-2.5 sm:px-3 py-1.5 rounded-md transition-all ${feedFilter === f ? 'text-steami-gold bg-steami-gold/10 border-steami-gold/30' : 'text-muted-foreground hover:text-foreground bg-transparent'}`}
                 style={{ border: `1px solid ${feedFilter === f ? 'rgba(232, 184, 75, 0.3)' : 'rgba(99, 179, 237, 0.1)'}` }}>
                 {f}
               </motion.button>

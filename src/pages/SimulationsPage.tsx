@@ -57,7 +57,7 @@ export default function SimulationsPage() {
         <h1 className="steami-heading text-2xl md:text-3xl mt-2">
           3D Simulations Lab
         </h1>
-        <p className="text-[18px] font-medium text-muted-foreground mt-3 max-w-[560px] leading-relaxed">
+        <p className="text-sm sm:text-[15px] md:text-[17px] font-medium text-muted-foreground mt-3 max-w-[560px] leading-relaxed">
           Hands-on, interactive 3D visualisations that bring abstract scientific concepts to life.
           Drag, adjust, and explore — learning through direct manipulation.
         </p>
@@ -218,7 +218,7 @@ export default function SimulationsPage() {
                 </motion.h2>
 
                 <motion.p
-                  className="text-[18px] font-medium italic leading-relaxed mb-6"
+                  className="text-sm sm:text-[15px] md:text-[17px] font-medium italic leading-relaxed mb-6"
                   style={{ color: '#8aacca', borderLeft: '2px solid hsl(var(--steami-gold))', paddingLeft: 18 }}
                   initial={{ opacity: 0, x: -12 }}
                   animate={{ opacity: 1, x: 0 }}

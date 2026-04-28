@@ -14,7 +14,7 @@ export default function BlogListingPage() {
   return (
     <SteamiLayout>
       <motion.div className="mb-10" variants={fadeInUp} initial="hidden" animate="visible">
-        <h1 className="steami-heading text-3xl md:text-4xl mb-4">Blog</h1>
+        <h1 className="steami-heading text-2xl sm:text-3xl md:text-4xl mb-4">Blog</h1>
         <p className="text-[15px] font-medium text-muted-foreground max-w-2xl leading-relaxed">
           The latest insights, discoveries, and thought pieces from the community.
         </p>

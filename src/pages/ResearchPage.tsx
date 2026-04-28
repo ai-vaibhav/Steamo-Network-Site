@@ -47,8 +47,8 @@ export default function ResearchPage() {
       <ScrollNavigator />
 
       <motion.div className="mb-6" variants={fadeInUp} initial="hidden" animate="visible">
-        <h1 className="steami-heading text-3xl md:text-4xl mb-3"> Research Articles</h1>
-        <p className="text-[18px] font-medium text-muted-foreground max-w-xl leading-relaxed">
+        <h1 className="steami-heading text-2xl sm:text-3xl md:text-4xl mb-3"> Research Articles</h1>
+        <p className="text-sm sm:text-[15px] md:text-[17px] font-medium text-muted-foreground max-w-xl leading-relaxed">
           Deep research environment across {activeFields.length} scientific fields. Browse by category and click articles for full study.
         </p>
       </motion.div>
@@ -79,7 +79,7 @@ export default function ResearchPage() {
             <button
               key={f}
               onClick={() => setActiveField(f)}
-              className={`px-3 py-1.5 rounded-md text-[16px] font-mono tracking-wider uppercase transition-all duration-200 ${activeField === f
+              className={`px-2.5 py-1.5 rounded-md text-[11px] sm:text-[12px] md:text-[13px] font-mono tracking-wider uppercase transition-all duration-200 ${activeField === f
                   ? 'text-steami-cyan'
                   : 'text-muted-foreground hover:text-foreground'
                 }`}
@@ -163,8 +163,8 @@ function CategorySection({
         </motion.button>
         <div
           ref={scrollRef}
-          className="flex gap-4 overflow-x-auto scrollbar-hide py-1 px-1 snap-x snap-mandatory"
-          style={{ scrollbarWidth: 'none', scrollSnapType: 'x mandatory' }}
+          className="flex gap-3 sm:gap-4 overflow-x-auto scrollbar-hide py-1 px-1 snap-x snap-mandatory"
+          style={{ scrollbarWidth: 'none', scrollSnapType: 'x mandatory', overscrollBehaviorX: 'contain' }}
         >
           {items.map((article, idx) => {
             const fieldImg = researchFieldImages[article.field];
@@ -177,7 +177,7 @@ function CategorySection({
                 whileHover={{ y: -3, boxShadow: isLight ? '0 12px 32px -8px rgba(147,197,253,0.35)' : '0 12px 32px -8px rgba(99,179,237,0.15)' }}
                 whileTap={cardTap}
                 className="glass-card relative p-0 cursor-pointer overflow-hidden shrink-0 snap-start group/card flex flex-row"
-                style={{ width: 520, minHeight: 240 }}
+                style={{ width: 'clamp(280px, 85vw, 520px)', minHeight: 200 }}
                 onClick={() => onSelect(article)}
               >
                 {/* Left accent bar (vertical) */}
@@ -197,8 +197,8 @@ function CategorySection({
                       </span>
                       <ShareMenu title={article.title} compact className="opacity-0 group-hover/card:opacity-100 transition-opacity" />
                     </div>
-                    <h3 className="font-serif text-[18px] font-extrabold mb-2 leading-snug text-foreground line-clamp-2">{article.title}</h3>
-                    <p className="text-[14px] font-medium text-muted-foreground leading-relaxed line-clamp-3 mb-3">{article.abstract}</p>
+                    <h3 className="font-serif text-[15px] sm:text-[17px] md:text-[18px] font-extrabold mb-2 leading-snug text-foreground line-clamp-2">{article.title}</h3>
+                    <p className="text-[12px] sm:text-[13px] md:text-[14px] font-medium text-muted-foreground leading-relaxed line-clamp-3 mb-3">{article.abstract}</p>
                   </div>
                   <div className="flex items-center justify-between pt-3 border-t border-foreground/5">
                     <span className="text-[11px] font-mono text-muted-foreground/60 tracking-wider">
@@ -434,7 +434,7 @@ function ArticleModal({
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.25 + i * 0.05 }}
-                className="text-[18px] font-medium leading-relaxed text-foreground/80 mb-5"
+                className="text-sm sm:text-[15px] md:text-[17px] lg:text-[18px] font-medium leading-relaxed text-foreground/80 mb-5"
               >
                 {para}
               </motion.p>
@@ -453,7 +453,7 @@ function ArticleModal({
                   borderLeft: '3px solid hsl(var(--steami-gold))',
                 }}
               >
-                <p className="text-sm font-medium leading-relaxed text-steami-gold2 italic">{quote}</p>
+                <p className="text-xs sm:text-sm font-medium leading-relaxed text-steami-gold2 italic">{quote}</p>
               </motion.blockquote>
             ))}
           </div>

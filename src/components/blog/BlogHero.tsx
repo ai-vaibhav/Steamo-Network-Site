@@ -47,15 +47,15 @@ export function BlogHero({
           transition={{ duration: 0.6 }}
         >
           <div className="flex items-center gap-3 mb-4">
-            <span className={`steami-badge steami-badge-${badgeColor} text-[16px]`}>{field}</span>
+            <span className={`steami-badge steami-badge-${badgeColor} text-[10px]`}>{field}</span>
             <span className="font-mono text-[11px] text-steami-cyan tracking-wider">{readingTime}</span>
           </div>
           
-          <h1 className="steami-heading text-4xl md:text-5xl lg:text-6xl mb-4 leading-tight">
+          <h1 className="steami-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 leading-tight">
             {title}
           </h1>
           
-          <p className="text-lg md:text-xl font-medium text-muted-foreground max-w-3xl leading-relaxed mb-6">
+          <p className="text-base sm:text-lg md:text-xl font-medium text-muted-foreground max-w-3xl leading-relaxed mb-6">
             {subtitle}
           </p>
           

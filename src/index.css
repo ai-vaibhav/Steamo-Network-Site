@@ -142,9 +142,10 @@
     font-family: var(--font-sans);
     line-height: 1.6;
     min-height: 100vh;
+    overflow-x: hidden;
     transition: background 0.5s ease, color 0.3s ease;
   }
-  
+
   html {
     scroll-behavior: smooth;
   }
@@ -227,6 +228,7 @@
     color: hsl(var(--steami-cyan));
     background: rgba(111, 168, 255, 0.08);
   }
+
   [data-theme="light"] .steami-badge-cyan {
     background: rgba(0, 92, 194, 0.08);
   }
@@ -236,6 +238,7 @@
     color: hsl(var(--steami-gold));
     background: rgba(232, 184, 75, 0.1);
   }
+
   [data-theme="light"] .steami-badge-gold {
     background: rgba(138, 112, 32, 0.08);
   }
@@ -354,13 +357,16 @@
 ::-webkit-scrollbar {
   width: 6px;
 }
+
 ::-webkit-scrollbar-track {
   background: transparent;
 }
+
 ::-webkit-scrollbar-thumb {
   background: rgba(111, 168, 255, 0.15);
   border-radius: 3px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(111, 168, 255, 0.3);
 }
@@ -368,55 +374,89 @@
 [data-theme="light"] ::-webkit-scrollbar-thumb {
   background: rgba(59, 130, 246, 0.2);
 }
+
 [data-theme="light"] ::-webkit-scrollbar-thumb:hover {
   background: rgba(59, 130, 246, 0.35);
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 5px rgba(111, 168, 255, 0.15); }
-  50% { box-shadow: 0 0 15px rgba(111, 168, 255, 0.25); }
+
+  0%,
+  100% {
+    box-shadow: 0 0 5px rgba(111, 168, 255, 0.15);
+  }
+
+  50% {
+    box-shadow: 0 0 15px rgba(111, 168, 255, 0.25);
+  }
 }
 
 @keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 @keyframes glow-border {
-  0%, 100% { border-color: rgba(111, 168, 255, 0.14); }
-  50% { border-color: rgba(111, 168, 255, 0.3); }
+
+  0%,
+  100% {
+    border-color: rgba(111, 168, 255, 0.14);
+  }
+
+  50% {
+    border-color: rgba(111, 168, 255, 0.3);
+  }
 }
 
 /* ── Micro-interaction utilities ──────────────────────────────── */
 .glass-card {
-  transition: transform 0.22s cubic-bezier(0.4,0,0.2,1),
-              border-color 0.25s ease,
-              box-shadow 0.3s ease,
-              background 0.25s ease;
+  transition: transform 0.22s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.25s ease,
+    box-shadow 0.3s ease,
+    background 0.25s ease;
   will-change: transform;
 }
 
 .glass-card:hover {
   transform: translateY(-3px) scale(1.008);
   box-shadow: 0 14px 44px rgba(0, 0, 0, 0.5),
-              0 0 24px rgba(111, 168, 255, 0.06),
-              inset 0 1px 0 var(--steami-metal-highlight);
+    0 0 24px rgba(111, 168, 255, 0.06),
+    inset 0 1px 0 var(--steami-metal-highlight);
 }
 
 [data-theme="light"] .glass-card:hover {
   box-shadow: 0 8px 28px rgba(0, 40, 100, 0.12),
-              0 2px 6px rgba(0, 0, 0, 0.04),
-              inset 0 1px 0 var(--steami-metal-highlight);
+    0 2px 6px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 var(--steami-metal-highlight);
 }
 
 .glass-card:active {
@@ -425,7 +465,7 @@
 }
 
 .steami-btn {
-  transition: all 0.2s cubic-bezier(0.4,0,0.2,1);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform, box-shadow;
 }
 
@@ -445,9 +485,9 @@
 /* Shimmer loading effect */
 .shimmer {
   background: linear-gradient(90deg,
-    rgba(111, 168, 255, 0.03) 25%,
-    rgba(111, 168, 255, 0.08) 50%,
-    rgba(111, 168, 255, 0.03) 75%);
+      rgba(111, 168, 255, 0.03) 25%,
+      rgba(111, 168, 255, 0.08) 50%,
+      rgba(111, 168, 255, 0.03) 75%);
   background-size: 200% 100%;
   animation: shimmer 2s ease-in-out infinite;
 }
@@ -457,13 +497,14 @@
 .glass-card:focus-visible {
   outline: none;
   box-shadow: 0 0 0 2px rgba(111, 168, 255, 0.4),
-              0 0 15px rgba(111, 168, 255, 0.1);
+    0 0 15px rgba(111, 168, 255, 0.1);
 }
 
 /* Smooth link underline animation */
 .nav-link-animated {
   position: relative;
 }
+
 .nav-link-animated::after {
   content: '';
   position: absolute;
@@ -474,19 +515,56 @@
   background: hsl(var(--steami-cyan));
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.25s cubic-bezier(0.4,0,0.2,1);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .nav-link-animated:hover::after,
 .nav-link-animated.active::after {
   transform: scaleX(1);
 }
 
 /* SVG micro-animation keyframes */
-@keyframes svg-pulse { 0%,100%{opacity:.35} 50%{opacity:.8} }
-@keyframes svg-rotate { to{transform:rotate(360deg)} }
-@keyframes svg-dash { to{stroke-dashoffset:0} }
-@keyframes svg-orbit { to{transform:rotate(360deg)} }
-@keyframes svg-float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-3px)} }
+@keyframes svg-pulse {
+
+  0%,
+  100% {
+    opacity: .35
+  }
+
+  50% {
+    opacity: .8
+  }
+}
+
+@keyframes svg-rotate {
+  to {
+    transform: rotate(360deg)
+  }
+}
+
+@keyframes svg-dash {
+  to {
+    stroke-dashoffset: 0
+  }
+}
+
+@keyframes svg-orbit {
+  to {
+    transform: rotate(360deg)
+  }
+}
+
+@keyframes svg-float {
+
+  0%,
+  100% {
+    transform: translateY(0)
+  }
+
+  50% {
+    transform: translateY(-3px)
+  }
+}
 
 /* Light theme image clarity */
 [data-theme="light"] .glass-card img,
@@ -496,11 +574,15 @@
 
 /* Reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
+
   .glass-card,
   .steami-btn,
   .steami-badge {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
   }
-  [class*="svg-"] { animation: none !important; }
+
+  [class*="svg-"] {
+    animation: none !important;
+  }
 }
