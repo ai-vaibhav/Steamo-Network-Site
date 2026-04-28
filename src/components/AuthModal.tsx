@@ -7,7 +7,7 @@ import { useThemeStore } from '@/stores/theme-store';
 interface AuthModalProps {
   open: boolean;
   onClose: () => void;
-  onSuccess: () => void;
+  onSuccess: (tab: 'login' | 'register') => void;
 }
 
 export function AuthModal({ open, onClose, onSuccess }: AuthModalProps) {
@@ -43,7 +43,7 @@ export function AuthModal({ open, onClose, onSuccess }: AuthModalProps) {
       const success = tab === 'login'
         ? await login(email, password)
         : await register(fullName, email, password);
-      if (success) { reset(); onSuccess(); }
+      if (success) { reset(); onSuccess(tab); }
     } catch { setError('Something went wrong.'); }
     setLoading(false);
   };

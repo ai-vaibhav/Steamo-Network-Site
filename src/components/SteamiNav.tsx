@@ -44,12 +44,14 @@ export function SteamiNav() {
     return () => window.removeEventListener('keydown', onKey);
   }, [menuOpen, closeMenu]);
 
-  const handleAuthSuccess = () => {
+  const handleAuthSuccess = (tab: 'login' | 'register') => {
     setAuthOpen(false);
-    // Check if first-time login (not yet onboarded)
-    const u = useAuthStore.getState().user;
-    if (u && !u.onboarded) {
-      setTimeout(() => setOnboardOpen(true), 300);
+    // Only show onboarding after a fresh registration, never after login
+    if (tab === 'register') {
+      const u = useAuthStore.getState().user;
+      if (u && !u.onboarded) {
+        setTimeout(() => setOnboardOpen(true), 300);
+      }
     }
   };
 

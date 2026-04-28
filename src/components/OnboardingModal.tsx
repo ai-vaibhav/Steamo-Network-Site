@@ -6,15 +6,15 @@ import { useThemeStore } from '@/stores/theme-store';
 import { useNavigate } from 'react-router-dom';
 
 const TOPICS = [
-  { id: 'QUANTUM PHYSICS', label: 'Quantum Physics', desc: 'Superposition, entanglement, qubits', icon: '️' },
-  { id: 'BIOLOGY', label: 'Biology', desc: 'CRISPR, genetics, evolution', icon: '' },
-  { id: 'AI', label: 'Artificial Intelligence', desc: 'Neural nets, LLMs, machine learning', icon: '' },
-  { id: 'EARTH & SPACE', label: 'Earth & Space', desc: 'Cosmology, exoplanets, dark energy', icon: '' },
-  { id: 'CLIMATE & ENERGY', label: 'Climate & Energy', desc: 'Fusion, renewables, sustainability', icon: '' },
-  { id: 'COMPUTER SCIENCE', label: 'Computer Science', desc: 'Blockchain, cryptography, algorithms', icon: '' },
-  { id: 'MEDICINE', label: 'Medicine', desc: 'Neuroscience, immunology, health', icon: '' },
-  { id: 'CHEMISTRY', label: 'Chemistry', desc: 'Materials, reactions, nanotechnology', icon: '' },
-  { id: 'PHYSICS', label: 'Physics', desc: 'Relativity, particles, thermodynamics', icon: '' },
+  { id: 'QUANTUM PHYSICS', label: 'Quantum Physics', desc: 'Superposition, entanglement, qubits', icon: '⚛️' },
+  { id: 'BIOLOGY', label: 'Biology', desc: 'CRISPR, genetics, evolution', icon: '🧬' },
+  { id: 'AI', label: 'Artificial Intelligence', desc: 'Neural nets, LLMs, machine learning', icon: '🤖' },
+  { id: 'EARTH & SPACE', label: 'Earth & Space', desc: 'Cosmology, exoplanets, dark energy', icon: '🌌' },
+  { id: 'CLIMATE & ENERGY', label: 'Climate & Energy', desc: 'Fusion, renewables, sustainability', icon: '♻️' },
+  { id: 'COMPUTER SCIENCE', label: 'Computer Science', desc: 'Blockchain, cryptography, algorithms', icon: '💻' },
+  { id: 'MEDICINE', label: 'Medicine', desc: 'Neuroscience, immunology, health', icon: '🩺' },
+  { id: 'CHEMISTRY', label: 'Chemistry', desc: 'Materials, reactions, nanotechnology', icon: '🧪' },
+  { id: 'PHYSICS', label: 'Physics', desc: 'Relativity, particles, thermodynamics', icon: '🔬' },
 ];
 
 interface OnboardingModalProps {
